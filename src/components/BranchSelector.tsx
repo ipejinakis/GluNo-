@@ -8,8 +8,7 @@ interface BranchSelectorProps {
 }
 
 const sucursales = [
-  { id: 'centro', nombre: 'Sucursal Centro', direccion: 'Av. Principal 123', horario: '08:00 - 20:00' },
-  { id: 'norte', nombre: 'Sucursal Norte', direccion: 'Calle Las Flores 456', horario: '09:00 - 21:00' },
+  { id: 'centro', nombre: 'Sucursal Central', direccion: 'M. T. de Alvear 445', horario: '08:00 - 20:00' },
 ];
 
 export default function BranchSelector({ onChange }: BranchSelectorProps) {
@@ -21,7 +20,7 @@ export default function BranchSelector({ onChange }: BranchSelectorProps) {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 ">
       <h3 className="text-xl font-bold text-gray-900 mb-4">¿Dónde retiras tu pedido?</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {sucursales.map((local) => (

@@ -92,6 +92,7 @@ import Navbar from '@/components/Navbar';
 import BrandFilters from '@/components/BrandFilters';
 import ProductCard from '@/components/ProductCard';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 
 export default async function Home({
   searchParams,
@@ -137,9 +138,17 @@ export default async function Home({
              Elige tus productos favoritos de nuestras marcas seleccionadas y retira en tu sucursal más cercana. Frescura garantizada todos los días.
            </p>
          </div>
-         <div className="relative h-[450px] rounded-[48px] overflow-hidden bg-gray-200 shadow-2xl">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2072')] bg-cover bg-center" />
-         </div>
+         <div className="relative h-[450px] rounded-[48px] overflow-hidden bg-gray-50 flex items-center justify-center p-8">
+            <Image
+              src="/images/LogoGluno.jpg" 
+              alt="GluNo Logo"
+              fill
+              priority
+              /* CAMBIO CLAVE: object-contain en lugar de object-cover */
+              className="object-contain transition-transform duration-700 hover:scale-105" 
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
        </section>
 
       <BrandFilters />
