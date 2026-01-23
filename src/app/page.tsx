@@ -144,7 +144,7 @@ export default async function Home({
               alt="GluNo Logo"
               fill
               priority
-              /* CAMBIO CLAVE: object-contain en lugar de object-cover */
+              /* CAMBIO CLAVE: object-contain en lugar de object-coverr */
               className="object-contain transition-transform duration-700 hover:scale-105" 
               sizes="(max-width: 768px) 100vw, 50vw"
             />
