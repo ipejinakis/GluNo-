@@ -14,7 +14,7 @@ export default function Footer() {
               PANETTERIA
             </h2>
             <p className="text-gray-400 max-w-xs leading-relaxed">
-              Llevamos la tradición del buen pan a tu mesa. Calidad garantizada en cada producto.
+              Calidad garantizada en cada producto.
             </p>
             <div className="flex gap-4">
               <a 
@@ -46,7 +46,13 @@ export default function Footer() {
                 </div>
                 <p className="text-gray-400 text-sm">Alvear 445, Salta, Argentina</p>
                 <p className="text-gray-500 text-[10px] font-bold mt-1 uppercase tracking-wider">
-                  Lun a Sáb: 08:00 - 20:00
+                  Lunes: 16:00 - 20:00
+                </p>
+                <p className="text-gray-500 text-[10px] font-bold mt-1 uppercase tracking-wider">
+                  Mar a Sab: 09:00 - 13:00 | 16:00 - 20:00
+                </p>
+                <p className="text-gray-500 text-[10px] font-bold mt-1 uppercase tracking-wider">
+                  Domingo: Cerrado
                 </p>
               </div>
             </div>
