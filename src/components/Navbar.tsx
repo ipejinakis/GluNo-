@@ -4,6 +4,7 @@ import { supabase } from '@/lib/supabase';
 import Link from 'next/link';
 import { ShoppingBag, User, LogOut, Package, ChevronDown, UserCircle } from 'lucide-react';
 import { useCartStore } from '@/lib/store';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [usuario, setUsuario] = useState<any>(null);
@@ -46,9 +47,16 @@ export default function Navbar() {
         
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-2xl font-black tracking-tighter text-[#e30613] group-hover:scale-105 transition-transform">
-            GluNo!
-          </span>
+          <div className="flex items-center">
+            <Image
+              src="/images/Logo resumido.png" // O la ruta de tu logo horizontal
+              alt="GluNo Logo"
+              width={120}  // Ajusta según qué tan grande quieras que se vea en el header
+              height={40}  // Mantén la proporción
+              className="object-contain"
+              priority    // IMPORTANTE: Al ser el logo del header, queremos que cargue de inmediato
+            />
+          </div>
         </Link>
 
         {/* Acciones Derecha */}

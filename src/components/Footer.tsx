@@ -1,57 +1,53 @@
 'use client';
 import { Instagram, Facebook, MapPin, MessageCircle } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Footer() {
   const telefono = "5493875240948"; 
-  // Tip: encodeURIComponent asegura que los signos de pregunta y exclamación no rompan el enlace
   const mensaje = "Hola! Bienvenido a la web de GLUNO, ¿en qué te puedo ayudar?";
   const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
   return (
     <footer className="bg-white border-t border-gray-100 py-16">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
+        {/* CAMBIO: md:text-left para que en desktop todo se alinee a la izquierda */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center md:text-left">
           
           {/* Columna 1: Marca y Redes */}
-          <div className="flex flex-col items-center space-y-6">
-            <h2 className="text-2xl font-black text-[#e30613] tracking-tighter">
-              GLUNO
-            </h2>
-            <p className="text-gray-400 max-w-xs leading-relaxed">
+          {/* CAMBIO: md:items-start para alinear al inicio arriba */}
+          <div className="flex flex-col items-center md:items-start space-y-4">
+            <div className="flex items-center">
+              <Image
+                src="/images/Logo resumido.png"
+                alt="GluNo Logo"
+                width={80}  // REDUCIDO: De 120 a 80 para que sea más discreto
+                height={30}
+                className="object-contain"
+              />
+            </div>
+            <p className="text-gray-400 max-w-xs leading-relaxed text-sm">
               Calidad garantizada en cada producto.
             </p>
             
-            {/* Botón de WhatsApp con icono */}
             <a 
               href={url} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 bg-gray-50 rounded-full text-gray-400 hover:text-[#25D366] hover:bg-green-50 transition-all"
+              className="p-2.5 bg-gray-50 rounded-full text-gray-400 hover:text-[#25D366] hover:bg-green-50 transition-all w-fit"
             >
-              {/* Usamos el ícono MessageCircle que es el estándar de WhatsApp en Lucide */}
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              >
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
+              <MessageCircle size={20} />
             </a>
           </div>
 
           {/* Columna 2: Locales */}
-          <div className="flex flex-col items-center space-y-6">
+          {/* CAMBIO: md:items-start para que el título y la info estén a la misma altura que el logo */}
+          <div className="flex flex-col items-center md:items-start space-y-6">
             <h3 className="text-sm font-black text-gray-900 uppercase tracking-[0.2em]">
               Nuestros Locales
             </h3>
             <div className="space-y-4">
-              <div className="flex flex-col items-center">
+              {/* CAMBIO: md:items-start en el contenedor de la sucursal */}
+              <div className="flex flex-col items-center md:items-start">
                 <div className="flex items-center gap-2 text-gray-900 font-bold mb-1">
                   <MapPin size={16} className="text-[#f7b200]" />
                   <span>Sucursal Centro</span>

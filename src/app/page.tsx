@@ -126,31 +126,34 @@ export default async function Home({
       
       {/* {Hero Section} */}
        <section className="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-12 items-center">
-         <div className="space-y-6 animate-in fade-in slide-in-from-left duration-700">
-           <span className="text-[#e30613] font-bold tracking-widest uppercase text-sm block">
-             Distribución Mayorista
-           </span>
-           <h1 className="text-6xl font-extrabold text-gray-900 leading-[1.1]">
-             Las Mejores Marcas<br /> 
-             <span className="text-[#f7b200]">Sin Gluten en un solo lugar.</span>
-           </h1>
-           <p className="text-lg text-gray-600 max-w-md">
-             Elige tus productos favoritos de nuestras marcas seleccionadas y retira en tu sucursal más cercana. Frescura garantizada todos los días.
-           </p>
-         </div>
-         <div className="relative h-[450px] rounded-[48px] overflow-hidden bg-gray-50 flex items-center justify-center p-8">
-            <Image
-              src="/images/LogoGluno.jpg" 
-              alt="GluNo Logo"
-              fill
-              priority
-              /* CAMBIO CLAVE: object-contain en lugar de object-coverr */
-              className="object-contain transition-transform duration-700 hover:scale-105" 
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
-       </section>
+  {/* Bloque de Texto (Izquierda) */}
+        <div className="space-y-6 animate-in fade-in slide-in-from-left duration-700">
+          <span className="text-[#e30613] font-bold tracking-widest uppercase text-sm block">
+            Distribución Mayorista
+          </span>
+          <h1 className="text-6xl font-extrabold text-gray-900 leading-[1.1]">
+            Las Mejores Marcas<br /> 
+            <span className="text-[#f7b200]">Sin Gluten en un solo lugar.</span>
+          </h1>
+          <p className="text-lg text-gray-600 max-w-md">
+            Elige tus productos favoritos de nuestras marcas seleccionadas y retira en tu sucursal más cercana. Frescura garantizada todos los días.
+          </p>
+        </div>
 
+        {/* Contenedor del Sticker (Derecha) */}
+        <div className="relative flex justify-center items-center">
+          <Image
+            src="/images/Logo completo.png"
+            alt="Sticker GluNo"
+            width={400} // Aumenté un poco el tamaño para que luzca en el espacio
+            height={400}
+            priority
+            className="rotate-12 transition-all duration-500 hover:rotate-3 hover:scale-105 select-none pointer-events-none"
+            /* El drop-shadow es lo que quita la sensación de "recuadro" */
+            // style={{ filter: 'drop-shadow(15px 15px 20px rgba(0,0,0,0.15))' }}
+          />
+        </div>
+      </section>
       <BrandFilters />
 
       <section className="max-w-7xl mx-auto px-4 py-12 mb-20">
